@@ -9,7 +9,7 @@
                   satirlarda işlem yap diyebiliriz, böylelikle ayni field verilebilir, parent child ilişkisi olmamiş olur
 
 ========================================================================================*/
-
+drop table calisanlar;
 CREATE TABLE calisanlar -- parent table -> PK
 (
 id CHAR(5) PRIMARY KEY, 
@@ -21,14 +21,14 @@ ise_baslama DATE
 --                             id PK      isim  U      maas NN  ise_baslama
 INSERT INTO calisanlar VALUES('1002', 'Haluk Bilgin' ,12000, '2018-04-14');
 INSERT INTO calisanlar VALUES('1008', null, 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('1010', null, 5000, '2018-04-14'); -- null unique kisitlamasini kabul etmez
+INSERT INTO calisanlar VALUES('1010', null, 5000, '2018-04-14'); -- null unique kisitlamasini kabul etmez****
 INSERT INTO calisanlar VALUES('1004', 'Ipek Bilir', 5000, '2018-04-14');
 INSERT INTO calisanlar VALUES('1005', 'Harun Bil', 5000, '2018-04-14');
 -- INSERT INTO calisanlar VALUES('1006', 'Halime Bilse', NULL, '2019-04-12'); -- maas null deger alamaz-> Error Code: 1048. Column 'maas' cannot be null
 INSERT INTO calisanlar VALUES('1003', 'Merve Bilmiş', 5000, '2018-04-14');
--- INSERT INTO calisanlar VALUES('1007', 'Merve Bilmiş', 5000, '2018-04-14'); -- Merve Bilmis kayitli oldugu oldugu icin dublicate girisi olamaz-> Error Code: 1062. Duplicate entry 'Merve Bilmiş' for key 'calisanlar.isim'
--- INSERT INTO calisanlar VALUES('1009', 'cem', '', '2018-04-14');  -- int type deger hiclik kabul etmez ->Error Code: 1366. Incorrect integer value: '' for column 'maas' at row 1
-INSERT INTO calisanlar VALUES('', 'osman', 2000, '2018-04-14'); -- hiclik null olarak kabul etmez
+-- INSERT INTO calisanlar VALUES('1007', 'Merve Bilmiş', 5000, '2018-04-14'); -- Merve Bilmis kayitli oldugu  icin dublicate girisi olamaz-> Error Code: 1062. Duplicate entry 'Merve Bilmiş' for key 'calisanlar.isim'
+-- INSERT INTO calisanlar VALUES('1009', 'cem', '', '2018-04-14');  -- ***int type deger hiclik kabul etmez ->Error Code: 1366. Incorrect integer value: '' for column 'maas' at row 1
+INSERT INTO calisanlar VALUES('', 'osman', 2000, '2018-04-14'); -- hiclik null olarak kabul etmez****
 -- INSERT INTO calisanlar VALUES('', 'osman can', 2000, '2018-04-14'); -- id pk (unique) oldugu icin ikinci defa dublicate hiclik kabul etmez
 -- INSERT INTO calisanlar VALUES( '1002', 'ayse Yılmaz' ,12000, '2018-04-14'); -- pk unuque oldugu icin dublicate kabul etmez
 -- INSERT INTO calisanlar VALUES( null, 'filiz ' ,12000, '2018-04-14'); -- pk null deger kabul etmez-> Error Code: 1048. Column 'id' cannot be null

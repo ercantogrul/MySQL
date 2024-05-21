@@ -99,7 +99,7 @@ select * from personel where id='1001' or id='1002' or id='1004';
 -- select * from personel where id='1001' or id='1002' or id='1007'; --  1007 id olmadigi icin record gozükmedi
 
 -- Task06.5 -> Maaşı sadece 70000 veya ismi javva Nur olan personeli listeleyen query create ediniz. ->
-select * from personel where maas in(70000,'javva Nur');  -- .......farkli kolonlarda in kullanmiyoruz
+select * from personel where maas in(70000,'javva Nur');  -- ....****farkli kolonlarda in kullanmiyoruz********************
 select * from personel where maas=70000 or isim='javva Nur';
 -- Ahan da Trick-> 'in' için sabit bir column ama 'or' için birden farkli colum sorgulanabilir. 
 -- 'in' oldugu zaman farkli colonlardan cagirma islemi yapilamaz. sadece ayni colondan cagirma islemi yapilabilinir

@@ -63,3 +63,50 @@ select * from urunler;
 
 select * from urunler;
 select * from tedarikciler;
+
+-- _________________________________
+-- task 08-> irtibat ismi Java Su olan firma ismini Rize olarak  değiştiriniz
+update tedarikciler
+set irtibat_ismi='Rize'
+where irtibat_ismi='Java Su';
+-- task09-> urun ismi, ve urun ıd toplam değerini yazdırın
+select urun_isim, sum(urun_id)  as id_toplam from urunler where urun_isim='Laptop' ;
+
+-- task10-> Her tedarikçi müşterinin ismini, ted_verginosunu ve o ürüne ait urun_id'sini ve irtibat ismini listeyeniz (edited) 
+select musteri_isim, ted_vergino, urun_id, 
+(select irtibat_ismi from tedarikciler where ted_vergino=vergi_no) as irtibat_ismi 
+from urunler ;
+
+select musteri_isim, ted_vergino, urun_id,irtibat_ismi
+from urunler ,tedarikciler
+where ted_vergino=vergi_no;
+
+-- task11-> Tedarikçi tablosunda vergi numarası en yüksek olan urun bilgilerini yazdırın
+select min(vergi_no) as min_vergiNo from tedarikciler;
+select max(vergi_no) as max_vergiNo from tedarikciler;
+select * from tedarikciler where vergi_no=(select max(vergi_no) from tedarikciler);
+
+-- task12->ted_verginosu 102 olan ürünlerin urun id numaralarının ortalamasını bulunuz
+select round(avg(urunler.urun_id)) as urun_Id_ortalama from urunler where urunler.ted_vergino=102;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
