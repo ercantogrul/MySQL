@@ -30,6 +30,7 @@ select * from products;
 
 
 -- Soru 1) Her ürün grubundan 400 den pahalı kaç adet ürün vardır listeleyen query create ediniz.
+
 select g_name, count(p_name) as urun_grubu_adet_sayisi
 from product_group
 left join products
@@ -40,8 +41,8 @@ group by g_name;
 
 -- Soru 2) 400 den pahalı ürünü olan ürün gruplarında, kaç adet ürün vardır listeleyen query create ediniz.
 select g_name, count(products.g_code) as dortyuzden_pahali_urun_sayilari, group_concat(fiyat separator ' , ') as fiyatlar
-from products
-left join product_group
+from product_group
+left join products
 on product_group.g_code=products.g_code
 where fiyat>400
 group by g_name;
