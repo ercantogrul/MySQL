@@ -16,6 +16,7 @@ d_ad varchar(20),
 d_ogr varchar(30),
 d_kredi int
 );
+
 insert into dersler values (101,'Fizik','Mehmet hoca',5),(102,'Tarih','Hasan hoca',2),
 (103,'Bilgisayar','Ayşe hoca',5),(104,'Kimya','Kamil hoca',5),(105,'Resim','Ece hoca',5); 
 
@@ -24,6 +25,7 @@ d_kod int,
 o_no int,
 skor int
 );
+
 insert into notlar values (101,10,5),(101,11,8),(101,12,5),(101,10,7),
 (104,10,8),(102,10,9),(102,12,7),(102,11,7),(102,10,9),(102,13,3);
 
